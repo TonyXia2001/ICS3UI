@@ -10,4 +10,6 @@ def isPalindrome(userInput):
     if tempList == tempList[::-1]: print(userInput + " is a palindrome.")
     else: print(userInput + " is not a palindrome.")
 userInput = input("Please type in your word:")
-isPalindrome(userInput)
+while userInput != "END":
+    isPalindrome(userInput)
+    userInput = input("Please type in your word:")

@@ -9,7 +9,7 @@ from datetime import date
 def main():
     weekdays = {"1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday",
                "6": "Saturday", "7": "Sunday"}
-    months = {"1": "January", "2": "Februray", "3": "March", "4": "April", "5": "May",
+    months = {"1": "January", "2": "February", "3": "March", "4": "April", "5": "May",
               "6": "June", "7": "July", "8": "August", "9": "September", "10": "October",
               "11": "November", "12": "December"}
     input = takeInput()
@@ -18,6 +18,7 @@ def main():
     except ValueError:
         print(months[str(input["month"])] + " " + str(input["date"]) + ", " +
               str(input["year"]) + " is not a valid date.")
+        return -1
 
     currentDate = date.today()
     if theDate < currentDate:

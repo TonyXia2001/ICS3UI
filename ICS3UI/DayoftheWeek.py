@@ -15,17 +15,14 @@ def main():
     try:
         theDate = date(input["year"], input["month"], input["date"])
     except ValueError:
-        print(months[str(input["month"])] + " " + str(input["date"]) + ", " +
+        print(months[input["month"]] + " " + str(input["date"]) + ", " +
               str(input["year"]) + " is not a valid date.")
         return -1
 
     currentDate = date.today()
-    if theDate < currentDate:
-        be = " was a "
-    elif theDate > currentDate:
-        be = " will be a "
-    elif theDate == currentDate:
-        be = " is a "
+    if theDate < currentDate: be = " was a "
+    elif theDate > currentDate: be = " will be a "
+    elif theDate == currentDate: be = " is a "
 
     print(months[theDate.month] + " " + str(theDate.day) + ", " + str(theDate.year)
           + be + weekdays[theDate.weekday()])
@@ -42,7 +39,7 @@ def takeInput():
         userInput = input("The date format needs to be YYYY-MM-DD. What's the date again?")
         userInput = userInput.split("-")
 
-    return {"year": int(userInput[0]), "month": int(userInput[1]), "date": int(userInput[2])}
+    return {"year": int(userInput[0]), "month": int(userInput[1])-1, "date": int(userInput[2])}
 
 if __name__ == '__main__':
     main()
